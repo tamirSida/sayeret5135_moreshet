@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 5135 - IDF Paratroopers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="smoke-container">
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+</div>
+
+<nav class="top-menu">
+    <div class="menu-container">
+        <button class="mobile-menu-btn">☰</button>
+        <div class="menu-items">
+            <a href="#" class="menu-item">ספר מורשת</a>
+            <a href="#" class="menu-item">
+                חללים
+                <div class="dropdown-content">
+                    <ul>
+                        <li>שם 1</li>
+                        <li>שם 2</li>
+                        <li>שם 3</li>
+                        <li>שם 4</li>
+                        <li>שם 5</li>
+                        <li>שם 6</li>
+                        <li>שם 7</li>
+                        <li>שם 8</li>
+                        <li>שם 9</li>
+                        <li>שם 10</li>
+                        <li>שם 11</li>
+                        <li>שם 12</li>
+                    </ul>
+                </div>
+            </a>
+            <a href="#" class="menu-item">פודקאסט</a>
+        </div>
+    </div>
+</nav>
+
+<header class="site-header">
+    <div class="logo-container">
+        <img src="img/logo.png" alt="Unit Logo" class="logo">
+    </div>
+    <div class="header-text">
+        <h1>אתר מורשת סיירת צנחנים</h1>
+        <h2>מלחמת חרבות הברזל</h2>
+    </div>
+</header>
+
+<script>
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        document.querySelector('.menu-items').classList.toggle('active');
+    });
+</script>
+</body>
+</html>
