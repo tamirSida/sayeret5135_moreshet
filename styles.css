@@ -59,7 +59,7 @@ body {
     }
 }
 
-/* More overlapping smoke elements */
+/* Position smoke elements */
 .smoke:nth-child(1) { left: 0%; --x: 150px; animation-delay: 0s; }
 .smoke:nth-child(2) { left: 20%; --x: -180px; animation-delay: 2s; }
 .smoke:nth-child(3) { left: 40%; --x: 200px; animation-delay: 4s; }
@@ -75,6 +75,113 @@ body {
 .smoke:nth-child(13) { left: 45%; --x: 150px; animation-delay: 4.5s; }
 .smoke:nth-child(14) { left: 65%; --x: -180px; animation-delay: 6.5s; }
 .smoke:nth-child(15) { left: 85%; --x: 200px; animation-delay: 8.5s; }
+
+/* Menu Styles */
+.top-menu {
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.menu-items {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-trigger {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    min-width: 250px;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1;
+}
+
+/* Show dropdown on hover for desktop */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* Show dropdown on click for mobile */
+@media (max-width: 768px) {
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+}
+
+.dropdown-content ul {
+    list-style: none;
+}
+
+.dropdown-content li {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-content li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.dropdown-content li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-content li a:hover {
+    color: #ffd700;
+}
 
 /* Header Styles */
 .site-header {
@@ -112,81 +219,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Menu Styles */
-.top-menu {
-    background: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding: 10px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.menu-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.menu-items {
-    display: flex;
-    gap: 20px;
-}
-
-.menu-item {
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    transition: all 0.3s ease;
-    position: relative;
-    cursor: pointer;
-}
-
-.menu-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-
-/* Dropdown Styles */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: rgba(0, 0, 0, 0.9);
-    min-width: 200px;
-    border-radius: 5px;
-    padding: 10px;
-    z-index: 1;
-}
-
-.menu-item:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-content ul {
-    list-style: none;
-}
-
-.dropdown-content li {
-    padding: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.dropdown-content a {
-    color: white;
-    text-decoration: none;
-}
-
-.dropdown-content a:hover {
-    color: #ccc;
-}
-
 /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
@@ -197,7 +229,7 @@ body {
     cursor: pointer;
 }
 
-/* Responsive Design */
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
     .mobile-menu-btn {
         display: block;
@@ -221,6 +253,11 @@ body {
     .dropdown-content {
         position: static;
         width: 100%;
+        min-width: auto;
+    }
+
+    .logo-container {
+        width: 150px;
     }
 
     .header-text h1 {
@@ -229,9 +266,5 @@ body {
 
     .header-text h2 {
         font-size: 1.5rem;
-    }
-
-    .logo-container {
-        width: 150px;
     }
 }

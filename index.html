@@ -31,22 +31,22 @@
         <button class="mobile-menu-btn">☰</button>
         <div class="menu-items">
             <a href="#" class="menu-item">ספר מורשת</a>
-            <div class="menu-item">
-                חללים
+            <div class="menu-item dropdown">
+                <a href="#" class="dropdown-trigger">חללים</a>
                 <div class="dropdown-content">
                     <ul>
-                        <li><a href="#roy-popko">רס״ן רועי פופקו ז״ל</a></li>
-                        <li><a href="#yair-zaken">רס״ן יאיר זקן ז״ל</a></li>
-                        <li><a href="#gil-becker">סרן גיל בקר ז״ל</a></li>
-                        <li><a href="#itamar-cohen">סגן איתמר כהן ז״ל</a></li>
-                        <li><a href="#ben-bronstein">סגן בן ברונשטיין ז״ל</a></li>
-                        <li><a href="#yonatan-maimon">סמ״ר יונתן מימון ז״ל</a></li>
-                        <li><a href="#shilo-rauchberger">סמ״ר שילה ראוכברגר ז״ל</a></li>
-                        <li><a href="#nadav-cohen">סמ״ר נדב כהן ז״ל</a></li>
-                        <li><a href="#roee-marom">סמ״ר רועי מרום ז״ל</a></li>
-                        <li><a href="#roi-tal">סמ״ר רועי טל ז״ל</a></li>
-                        <li><a href="#ido-levi">רב״ט עידו לוי ז״ל</a></li>
-                        <li><a href="#daniel-nachmias">רב״ט דניאל נחמיאס ז״ל</a></li>
+                        <li><a href="https://www.izkor.gov.il/%D7%94%D7%95%D7%93%20%D7%A9%D7%A8%D7%99%D7%99%D7%91%D7%9E%D7%9F/en_879ff0cad2212d21dba6396e4af5c1da" target="_blank">רב סרן הוד שרייבמן</a></li>
+                        <li><a href="https://www.izkor.gov.il/%D7%90%D7%A8%D7%99%D7%90%D7%9C%20%D7%91%D7%9F%20%D7%9E%D7%A9%D7%94/en_30106c47b245b3196e193bb832661be9" target="_blank">רב סרן אריאל בן משה</a></li>
+                        <li><a href="https://www.izkor.gov.il/איליי%20לוי/en_46be15ed0941f57af817f0f59c9e37d6" target="_blank">רב סרן איליי לוי</a></li>
+                        <li><a href="https://www.izkor.gov.il/איליי%20אלישע%20לוגסי/en_45087c3b5757093fc2eb24c4275dee3a" target="_blank">סרן איליי אלישע לוגסי</a></li>
+                        <li><a href="https://www.izkor.gov.il/עומרי%20שורץ/en_3b58695cb59553dedd90793ec9eff299" target="_blank">סגן עומרי שורץ</a></li>
+                        <li><a href="https://www.izkor.gov.il/שחר%20בן%20נון/en_4c9d24f0495559f3ce03dd14e25f912d" target="_blank">סגן שחר בן נון</a></li>
+                        <li><a href="https://www.izkor.gov.il/אוריאל%20אביעד%20סילברמן/en_ef6ba0f1a6ecd0cf34d2450155d7637e" target="_blank">רב סמל אוריאל אביעד סילברמן</a></li>
+                        <li><a href="https://www.izkor.gov.il/רותם%20סהר%20הדר/en_9f69dbec615b00312fae89ca9776f23e" target="_blank">סמל ראשון רותם סהר הדר</a></li>
+                        <li><a href="https://www.izkor.gov.il/עמית%20בונצל/en_7ad86192930d98b91daf641e4cf2f186" target="_blank">סמל ראשון עמית בונצל</a></li>
+                        <li><a href="https://www.izkor.gov.il/מעוז%20מורל/en_11e34a29d58e7e7bb435dbdb3ca94e4b" target="_blank">סמל ראשון מעוז (מאגוז) מורל</a></li>
+                        <li><a href="https://www.izkor.gov.il/ישראל%20אליהו%20סוויסה/en_be093a62cbb5386308834ba9ba4bd51f" target="_blank">סמל ראשון ישראל אליהו סוויסה</a></li>
+                        <li><a href="https://www.izkor.gov.il/גיא%20שמחי/en_caba3be9e4e333fe269c7ef22b5f0aed" target="_blank">סמל ראשון גיא שמחי</a></li>
                     </ul>
                 </div>
             </div>
@@ -57,7 +57,7 @@
 
 <header class="site-header">
     <div class="logo-container">
-        <img src="img/logo.png" alt="סמל היחידה" class="logo">
+        <img src="img/logo.png" alt="Unit Logo" class="logo">
     </div>
     <div class="header-text">
         <h1>אתר מורשת סיירת צנחנים</h1>
@@ -68,6 +68,23 @@
 <script>
     document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
         document.querySelector('.menu-items').classList.toggle('active');
+    });
+
+    // Handle dropdown on mobile
+    document.querySelector('.dropdown-trigger').addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+        }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelector('.dropdown').classList.remove('active');
+            }
+        }
     });
 </script>
 </body>
