@@ -92,14 +92,17 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     padding: 0 20px;
 }
 
 .menu-items {
     display: flex;
-    gap: 20px;
+    gap: 80px;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
 }
 
 .menu-item {
@@ -108,6 +111,7 @@ body {
     padding: 10px 15px;
     transition: all 0.3s ease;
     position: relative;
+    text-align: center;
 }
 
 .menu-item:hover {
@@ -126,6 +130,7 @@ body {
     padding: 10px 15px;
     transition: all 0.3s ease;
     display: block;
+    text-align: center;
 }
 
 .dropdown-content {
@@ -244,6 +249,7 @@ body {
         flex-direction: column;
         background: rgba(0, 0, 0, 0.9);
         padding: 10px;
+        gap: 20px;
     }
 
     .menu-items.active {
@@ -254,6 +260,12 @@ body {
         position: static;
         width: 100%;
         min-width: auto;
+    }
+
+    .menu-item,
+    .dropdown-trigger {
+        width: 100%;
+        text-align: center;
     }
 
     .logo-container {
