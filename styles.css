@@ -144,6 +144,7 @@ body {
     padding: 10px 15px;
     transition: all 0.3s ease;
     position: relative;
+    cursor: pointer;
 }
 
 .menu-item:hover {
@@ -175,6 +176,15 @@ body {
 .dropdown-content li {
     padding: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    color: #ccc;
 }
 
 /* Mobile Menu Button */
