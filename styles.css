@@ -100,7 +100,7 @@ body {
 .menu-items {
     display: flex;
     gap: 80px;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
