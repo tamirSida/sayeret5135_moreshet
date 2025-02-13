@@ -224,6 +224,16 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+#story {
+    font-size: 1rem;
+    font-weight: 300;
+    padding-top: 2rem;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+
+}
+
 /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
