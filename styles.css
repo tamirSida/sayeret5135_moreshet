@@ -271,21 +271,17 @@ body {
     touch-action: manipulation;
 }
 
-.read-more-btn:hover, .read-less-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+/* Show read-more button by default */
+.read-more-btn {
+    display: inline-block !important;
 }
 
-.read-more-btn:active, .read-less-btn:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
+/* Hide read-less button by default */
 .read-less-btn {
-    display: none;
+    display: none !important;
 }
 
+/* When expanded, hide read-more and show read-less */
 .story-container.expanded .read-more-content {
     display: inline;
 }
@@ -295,11 +291,22 @@ body {
 }
 
 .story-container.expanded .read-more-btn {
-    display: none;
+    display: none !important;
 }
 
 .story-container.expanded .read-less-btn {
-    display: inline-block;
+    display: inline-block !important;
+}
+
+.read-more-btn:hover, .read-less-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.read-more-btn:active, .read-less-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Show dropdown on hover for desktop */
@@ -361,11 +368,6 @@ body {
         width: 100%;
         max-width: 200px;
         margin: 1.5rem auto 0;
-        display: block;
-    }
-
-    .story-container.expanded .read-less-btn {
-        display: block;
     }
 
     .mobile-menu-btn {

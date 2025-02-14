@@ -68,8 +68,8 @@
             <p id="story">ביום שבת, השביעי לחודש אוקטובר 2023, בוקר שמחת תורה נקראה מדינת ישראל למערכה שתיחרט בדפי ההיסטוריה של עם ישראל.<span class="read-more-dots">...</span><span class="read-more-content">
             סיירת צנחנים גייסה את עצמה מתוך חופשה והתייצבו במהרה ביישובי הדרום להגן על תושבי העוטף. תחילה כיחידים בעלי נשק, אט אט התאספו לכדי חוליות וצוותים ועד להשלמת הסיירת כמסגרת לוחמת מלאה אל מול המחבלים הארורים אשר חצו לשטח ישראל.
             במרוץ הזמן הוכיחו לוחמי הסיירת כי הם ממשיכי דרכם של גיבורי העבר ולחמו בארבע חזיתות שונות בתוך פחות משנתיים. החל מהלחימה בחזית העורף ביישובי העוטף, דרך התמרון ההיסטורי בעזה, אל היותם הלוחמים הראשונים לחצות את גבול הלבנון לתמרון מזה 20 שנה ועד להיות פורצי הדרך הראשונים אל תוך החזית הסורית. בכל אלו כתבו לוחמי הסיירת פרק חדש במורשת היחידה המפוארת. לוחמי הסיירת הוכיחו כי רוח הלחימה, ההקרבה והמקצועיות הם נר לרגליהם, בעומדם על המשמר, מוכנים תמיד לקריאה, יום ולילה, להגן על גבולות המדינה ולהכריע את האויב בכל מקום שיידרש.</span></p>
-            <button class="read-more-btn">קרא עוד</button>
-            <button class="read-less-btn">קרא פחות</button>
+            <button class="read-more-btn">קראו עוד</button>
+            <button class="read-less-btn">קראו פחות</button>
         </div>
     </div>
 </header>
@@ -102,15 +102,29 @@
         const readLessBtn = document.querySelector('.read-less-btn');
         const storyContainer = document.querySelector('.story-container');
 
+        // Show read-more button by default
+        if (readMoreBtn) {
+            readMoreBtn.style.display = 'inline-block';
+        }
+
+        // Ensure read-less button is hidden by default
+        if (readLessBtn) {
+            readLessBtn.style.display = 'none';
+        }
+
         if (readMoreBtn) {
             readMoreBtn.addEventListener('click', function() {
                 storyContainer.classList.add('expanded');
+                readMoreBtn.style.display = 'none';
+                readLessBtn.style.display = 'inline-block';
             });
         }
 
         if (readLessBtn) {
             readLessBtn.addEventListener('click', function() {
                 storyContainer.classList.remove('expanded');
+                readMoreBtn.style.display = 'inline-block';
+                readLessBtn.style.display = 'none';
             });
         }
     });
