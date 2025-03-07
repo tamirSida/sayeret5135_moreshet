@@ -16,16 +16,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Particles.js container */
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    pointer-events: none;
-}
+
 
 /* Smoke Effect */
 .smoke-container {
